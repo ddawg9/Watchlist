@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f8;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+main section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+
+section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+
+#search-form {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+#search {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5b6cdb;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4655b5;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #666;
+}
+
+/*shows side by side*/
+#results,
+#want-to-watch,
+#ongoing,
+#completed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+/*Single show per thingy*/
+#results li,
+#want-to-watch li,
+#ongoing li,
+#completed li {
+    background-color: #f8f8fc;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+/*Shows images*/
+#results img,
+#want-to-watch img,
+#ongoing img,
+#completed img {
+    width: 100%;
+    max-width: 180px;
+    border-radius: 8px;
+}
