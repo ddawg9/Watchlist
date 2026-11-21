@@ -33,7 +33,27 @@ async function searchShows(name) {
             const rating = document.createElement("p");
             rating.textContent = "Rating: " + (show.rating.average ?? "N/A");
 
-            li.append(title, rating);
+            const category = document.createElement("select");
+
+            category.innerHTML = `<option value="want-to-watch">Want to Watch</option>
+                                <option value="ongoing">Ongoing</option>
+                                <option value="completed">Completed</option>`;
+
+            const addButton = document.createElement("button");
+            addButton.textContent = "Add to Watchlist";
+
+            addButton.addEventListener("click", () => {
+                const selectedCategory = document.querySelector(`#${category.value}`);
+
+                const watchlistItem = li.cloneNode(true);
+
+                watchlistItem.querySelector("select").remove();
+                watchlistItem.querySelector("button").remove();
+
+                selectedCategory.append(watchlistItem);
+            });
+
+            li.append(title, rating, category, addButton);
 
             if (show.image) {
                 const poster = document.createElement("img");
