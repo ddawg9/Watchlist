@@ -69,11 +69,21 @@ footer {
 #want-to-watch,
 #ongoing,
 #completed {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     gap: 20px;
-    padding: 0;
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px;
+    margin: 0;
     list-style: none;
+
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 /*Single show per thingy*/
@@ -86,6 +96,9 @@ footer {
     border-radius: 10px;
     padding: 15px;
     text-align: center;
+
+    flex: 0 0 180px;
+    box-sizing: border-box;
 }
 
 /*Shows images*/
